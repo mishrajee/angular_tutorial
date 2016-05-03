@@ -1,0 +1,17 @@
+<user-panel name={{person.name}} collapsed={{initialCollapsed}} level="person.level">
+    <address></address>
+    <div>
+      <h4>Friends :</h4>
+      <ul>
+        <li ng-repeat='friend in person.friends'>
+          {{friend}}
+          <remove-friend method="removeFriend(friend)"></remove-friend>
+        </li>
+      </ul>
+      <div ng-show="!!person.rank">
+        Rank : {{person.rank}}
+      </div>
+      <button ng-show="!person.rank" ng-click="knightUser(person)" class='btn btn-success'>Knight Me</button>
+      
+    </div>
+</user-panel>
